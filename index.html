@@ -50,7 +50,7 @@ body {
   overflow-x: hidden;
 }
 @media (hover: hover) and (pointer: fine) {
-  body { cursor: none; }
+  body { cursor: default; }
 }
 ::selection { background: rgba(233, 209, 116, .28); color: var(--green-deep); }
 
@@ -72,27 +72,7 @@ body::after {
   100% { transform: translate(-1px, -1px) }
 }
 
-/* ─── CUSTOM CURSOR ──────────────────────────── */
-#c-dot {
-  position: fixed; width: 8px; height: 8px;
-  border-radius: 50%; background: var(--gold);
-  pointer-events: none; z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width .22s, height .22s, opacity .22s;
-}
-#c-ring {
-  position: fixed; width: 36px; height: 36px;
-  border: 1.5px solid rgba(233, 209, 116, .55);
-  border-radius: 50%; pointer-events: none; z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width .28s, height .28s, border-color .28s;
-}
-@media (hover: none), (pointer: coarse) {
-  #c-dot, #c-ring { display: none; }
-}
-body.hov #c-dot { width: 12px; height: 12px; background: var(--gold-lt); }
-body.hov #c-ring { width: 54px; height: 54px; border-color: rgba(233, 209, 116, .85); }
-body.clk #c-dot { width: 5px; height: 5px; }
+
 
 /* ─── HAMBURGER ──────────────────────────────── */
 .nav-hamburger {
